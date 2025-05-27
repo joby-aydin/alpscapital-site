@@ -1,4 +1,7 @@
+from pathlib import Path
 
+# Updated HTML with Netlify contact form support
+html_with_form = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +40,23 @@
     .services li {
       margin-bottom: 10px;
     }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      background: #222;
+      border: 1px solid #444;
+      color: #fff;
+    }
+    form button {
+      background: #00c6ff;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1em;
+    }
     footer {
       text-align: center;
       padding: 20px;
@@ -74,8 +94,12 @@
 
   <section>
     <h2>Contact Us</h2>
-    <p>📧 info@alpscapitals.com</p>
-    <p>📍 Based in New Jersey, working globally</p>
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <footer>
@@ -83,3 +107,12 @@
   </footer>
 </body>
 </html>
+"""
+
+# Save the HTML content with contact form to a file
+form_dir = Path("/mnt/data/alpscapital_site_with_form")
+form_dir.mkdir(parents=True, exist_ok=True)
+html_file_with_form = form_dir / "index.html"
+html_file_with_form.write_text(html_with_form)
+
+html_file_with_form.name
