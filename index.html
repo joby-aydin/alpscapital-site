@@ -1,11 +1,7 @@
 from pathlib import Path
 
-# Updated HTML with:
-# - Netlify contact form with email notification via Netlify's default notification (UI-based trigger)
-# - Logo at the top (assume logo file name: logo.png)
-# - Mobile responsiveness and basic fade-in animation
-
-html_final = """
+# Updated HTML: logo on the left side, larger size, inline with title (desktop layout)
+html_with_left_logo = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,19 +27,24 @@ html_final = """
     header {
       background-color: #1e1e1e;
       padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
       text-align: center;
     }
     header img {
-      height: 80px;
-      margin-bottom: 10px;
+      height: 120px;
     }
     header h1 {
-      font-size: 2em;
-      margin: 10px 0;
+      font-size: 2.5em;
+      margin: 0;
     }
     header p {
-      font-size: 1.1em;
+      font-size: 1.2em;
       color: #aaa;
+      margin-top: 10px;
     }
     section {
       padding: 40px 20px;
@@ -85,17 +86,31 @@ html_final = """
     }
 
     @media (max-width: 600px) {
-      header h1 { font-size: 1.5em; }
-      section { padding: 20px 10px; }
-      form button { width: 100%; }
+      header {
+        flex-direction: column;
+      }
+      header img {
+        height: 80px;
+      }
+      header h1 {
+        font-size: 1.5em;
+      }
+      section {
+        padding: 20px 10px;
+      }
+      form button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <img src="logo.png" alt="Alps Capital Logo" />
-    <h1>Alps Capital</h1>
-    <p>We Build Premium iOS Apps for the Modern World</p>
+    <div>
+      <h1>Alps Capital</h1>
+      <p>We Build Premium iOS Apps for the Modern World</p>
+    </div>
   </header>
 
   <section>
@@ -137,10 +152,10 @@ html_final = """
 </html>
 """
 
-# Save updated version
-final_dir = Path("/mnt/data/alpscapital_final_site")
-final_dir.mkdir(parents=True, exist_ok=True)
-final_html = final_dir / "index.html"
-final_html.write_text(html_final)
+# Save this version
+left_logo_dir = Path("/mnt/data/alpscapital_site_left_logo")
+left_logo_dir.mkdir(parents=True, exist_ok=True)
+left_logo_html = left_logo_dir / "index.html"
+left_logo_html.write_text(html_with_left_logo)
 
-final_html.name
+left_logo_html.name
