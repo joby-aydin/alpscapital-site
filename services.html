@@ -1,82 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services - Alps Capital</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-    body {
-      background: #0e0e0e;
-      color: #f0f0f0;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    nav {
-      background: #1a1a1a;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav .logo {
-      font-weight: bold;
-      font-size: 1.5rem;
-      color: #00c6ff;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      margin: 0;
-      padding: 0;
-    }
-    nav ul li a {
-      color: #ccc;
-      text-decoration: none;
-    }
-    nav ul li a:hover {
-      color: #00c6ff;
-    }
-    section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      flex: 1;
-    }
-    h1 {
-      color: #00c6ff;
-      margin-bottom: 1rem;
-    }
-    .service-box {
-      background: #1a1a1a;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-      border: 1px solid #333;
-    }
-    h2 {
-      margin-top: 0;
-      color: #00c6ff;
-    }
-    footer {
-      background: #1a1a1a;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #888;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services - Alps Launch</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <nav>
-    <div class="logo">Alps Capital</div>
+    <div class="logo">
+      <img src="logo.png" alt="Logo"> Alps Launch
+    </div>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -85,36 +19,40 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-  <section>
-    <h1>Our Services</h1>
 
-    <div class="service-box">
-      <h2>App Design & UX</h2>
-      <p>From wireframes to high-fidelity UI kits, we craft interfaces tailored for clarity, speed, and delight.</p>
-    </div>
+  <div class="main-content">
+    <section class="hero-content">
+      <h1>Our Services</h1>
 
-    <div class="service-box">
-      <h2>Native iOS Development</h2>
-      <p>Swift, SwiftUI, and full integration with the latest Apple APIs ensure performance and longevity.</p>
-    </div>
+      <div class="service-box">
+        <h2>App Design & UX</h2>
+        <p>From wireframes to high-fidelity UI kits, we craft interfaces tailored for clarity, speed, and delight.</p>
+      </div>
 
-    <div class="service-box">
-      <h2>AI-Enhanced Features</h2>
-      <p>We specialize in embedding machine learning models, GPT-style AI, and on-device intelligence.</p>
-    </div>
+      <div class="service-box">
+        <h2>Native iOS Development</h2>
+        <p>Swift, SwiftUI, and full integration with the latest Apple APIs ensure performance and longevity.</p>
+      </div>
 
-    <div class="service-box">
-      <h2>App Store Optimization (ASO)</h2>
-      <p>We help maximize visibility and downloads through keyword strategies and launch support.</p>
-    </div>
+      <div class="service-box">
+        <h2>AI-Enhanced Features</h2>
+        <p>We specialize in embedding machine learning models, GPT-style AI, and on-device intelligence.</p>
+      </div>
 
-    <div class="service-box">
-      <h2>Ongoing Support & Maintenance</h2>
-      <p>Bug fixes, version updates, and user feedback integration to keep your app relevant and loved.</p>
-    </div>
-  </section>
+      <div class="service-box">
+        <h2>App Store Optimization (ASO)</h2>
+        <p>We help maximize visibility and downloads through keyword strategies and launch support.</p>
+      </div>
+
+      <div class="service-box">
+        <h2>Ongoing Support & Maintenance</h2>
+        <p>Bug fixes, version updates, and user feedback integration to keep your app relevant and loved.</p>
+      </div>
+    </section>
+  </div>
+
   <footer>
-    &copy; 2025 Alps Capital. All rights reserved.
+    &copy; 2025 Alps Launch. All rights reserved.
   </footer>
 </body>
 </html>
