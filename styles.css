@@ -1,5 +1,4 @@
-
-/* Reset and Layout */
+/* General layout */
 html, body {
   margin: 0;
   padding: 0;
@@ -22,12 +21,21 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 10;
 }
 
 nav .logo {
-  font-weight: bold;
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
+  font-weight: bold;
   color: #00c6ff;
+}
+
+nav .logo img {
+  height: 40px;
+  margin-right: 10px;
 }
 
 nav ul {
@@ -47,15 +55,15 @@ nav ul li a:hover {
   color: #00c6ff;
 }
 
-/* Hero Section */
+/* Hero section */
 .hero {
-  flex: 1;
   position: relative;
+  height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 4rem 2rem;
   overflow: hidden;
 }
 
@@ -66,30 +74,40 @@ nav ul li a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0.15;
   z-index: 0;
-  opacity: 0.2;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(14,14,14,0.6), rgba(14,14,14,1));
+  z-index: 1;
 }
 
 .hero-content {
-  z-index: 1;
   position: relative;
+  z-index: 2;
   max-width: 700px;
+  padding: 2rem;
 }
 
 .hero-content h1 {
   font-size: 3rem;
   color: #00c6ff;
   margin-bottom: 1rem;
-  animation: fadeIn 1s ease-out;
 }
 
 .hero-content p {
   font-size: 1.2rem;
   color: #ccc;
-  animation: fadeIn 2s ease-out;
 }
 
-/* Feature Section */
+/* Features section */
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -130,10 +148,5 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
   color: #888;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  margin-top: auto;
 }
