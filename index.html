@@ -1,7 +1,3 @@
-from pathlib import Path
-
-# Updated HTML: logo on the left side, larger size, inline with title (desktop layout)
-html_with_left_logo = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,138 +5,161 @@ html_with_left_logo = """
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alps Capital - iOS App Studio</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #f5f5f5;
-      line-height: 1.6;
-      animation: fadeIn 1s ease-in;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0e0e0e;
+      color: #f0f0f0;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    header {
-      background-color: #1e1e1e;
-      padding: 20px;
+    nav {
+      background: #1a1a1a;
+      padding: 1rem 2rem;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      text-align: center;
+      position: sticky;
+      top: 0;
     }
-    header img {
-      height: 120px;
-    }
-    header h1 {
-      font-size: 2.5em;
+    nav .logo { font-weight: bold; font-size: 1.5rem; color: #00c6ff; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
       margin: 0;
     }
+    nav ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover { color: #00c6ff; }
+    header {
+      background: url('hero.jpg') no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #fff;
+    }
     header p {
-      font-size: 1.2em;
+      font-size: 1.2rem;
       color: #aaa;
-      margin-top: 10px;
     }
     section {
-      padding: 40px 20px;
-      max-width: 800px;
+      padding: 3rem 2rem;
+      max-width: 1000px;
       margin: 0 auto;
     }
     h2 {
-      color: #00c6ff;
+      margin-bottom: 1rem;
     }
-    .services li {
-      margin-bottom: 10px;
+    .services, .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .portfolio div {
+      background: #1a1a1a;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid #333;
+    }
+    .portfolio h3 {
+      color: #00c6ff;
+      margin-bottom: 0.5rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
     }
     form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
       background: #222;
-      border: 1px solid #444;
       color: #fff;
-      font-size: 1em;
     }
     form button {
       background: #00c6ff;
-      color: #000;
       border: none;
-      padding: 10px 20px;
+      padding: 0.75rem;
+      font-size: 1rem;
       cursor: pointer;
-      font-size: 1em;
+      color: #000;
     }
     footer {
+      background: #1a1a1a;
       text-align: center;
-      padding: 20px;
-      background-color: #1e1e1e;
-      color: #777;
-    }
-    a {
-      color: #00c6ff;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-      }
-      header img {
-        height: 80px;
-      }
-      header h1 {
-        font-size: 1.5em;
-      }
-      section {
-        padding: 20px 10px;
-      }
-      form button {
-        width: 100%;
-      }
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Alps Capital Logo" />
-    <div>
-      <h1>Alps Capital</h1>
-      <p>We Build Premium iOS Apps for the Modern World</p>
-    </div>
+  <nav>
+    <div class="logo">Alps Capital</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <h1>We Build Premium iOS Apps</h1>
+    <p>Modern. Scalable. Native.</p>
   </header>
 
-  <section>
-    <h2>Our Mission</h2>
-    <p>
-      Alps Capital is a design-driven app studio focused on building beautiful, high-performance iOS applications.
-      We help individuals and businesses bring their ideas to life with smart, scalable mobile solutions — built natively for the Apple ecosystem.
-    </p>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Alps Capital is a tech-forward iOS app studio delivering smart, visually polished, and scalable solutions for startups and enterprises alike.</p>
   </section>
 
-  <section>
-    <h2>What We Do</h2>
-    <ul class="services">
-      <li>📲 iOS App Development – Custom apps for iPhone and iPad using Swift & SwiftUI</li>
-      <li>🧩 App Design & UX – Clean interfaces and seamless user experiences</li>
-      <li>🚀 App Store Launch & Monetization – From testing to App Store Optimization</li>
-      <li>🔄 Maintenance & Updates – Keep your app optimized for every iOS release</li>
-    </ul>
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div><h3>App Design</h3><p>UI/UX optimized for Apple platforms</p></div>
+      <div><h3>iOS Development</h3><p>Native Swift & SwiftUI apps</p></div>
+      <div><h3>Launch & ASO</h3><p>Get to the App Store faster & smarter</p></div>
+      <div><h3>Maintenance</h3><p>Version upgrades, bug fixes, enhancements</p></div>
+    </div>
   </section>
 
-  <section>
+  <section id="portfolio">
+    <h2>Coming Soon</h2>
+    <div class="portfolio">
+      <div>
+        <h3>AI Productivity App</h3>
+        <p>A sleek, voice-driven productivity assistant powered by the latest AI.</p>
+      </div>
+      <div>
+        <h3>Companion App</h3>
+        <p>An interactive learning app that adapts to each user’s progress.</p>
+      </div>
+      <div>
+        <h3>Next-Gen Finance</h3>
+        <p>Financial AI for better daily budgeting and smart savings suggestions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
     <h2>Contact Us</h2>
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contact" />
-      <p style="display:none;">
-        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-      </p>
+    <form name="contact" method="POST" data-netlify="true">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </section>
@@ -150,12 +169,3 @@ html_with_left_logo = """
   </footer>
 </body>
 </html>
-"""
-
-# Save this version
-left_logo_dir = Path("/mnt/data/alpscapital_site_left_logo")
-left_logo_dir.mkdir(parents=True, exist_ok=True)
-left_logo_html = left_logo_dir / "index.html"
-left_logo_html.write_text(html_with_left_logo)
-
-left_logo_html.name
