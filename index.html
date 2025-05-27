@@ -1,7 +1,11 @@
 from pathlib import Path
 
-# Updated HTML with Netlify contact form support
-html_with_form = """
+# Updated HTML with:
+# - Netlify contact form with email notification via Netlify's default notification (UI-based trigger)
+# - Logo at the top (assume logo file name: logo.png)
+# - Mobile responsiveness and basic fade-in animation
+
+html_final = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,24 +13,36 @@ html_with_form = """
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alps Capital - iOS App Studio</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #111;
       color: #f5f5f5;
       line-height: 1.6;
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     header {
       background-color: #1e1e1e;
-      padding: 40px 20px;
+      padding: 20px;
       text-align: center;
     }
-    header h1 {
-      font-size: 2.5em;
+    header img {
+      height: 80px;
       margin-bottom: 10px;
     }
+    header h1 {
+      font-size: 2em;
+      margin: 10px 0;
+    }
     header p {
-      font-size: 1.2em;
+      font-size: 1.1em;
       color: #aaa;
     }
     section {
@@ -48,6 +64,7 @@ html_with_form = """
       background: #222;
       border: 1px solid #444;
       color: #fff;
+      font-size: 1em;
     }
     form button {
       background: #00c6ff;
@@ -66,10 +83,17 @@ html_with_form = """
     a {
       color: #00c6ff;
     }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5em; }
+      section { padding: 20px 10px; }
+      form button { width: 100%; }
+    }
   </style>
 </head>
 <body>
   <header>
+    <img src="logo.png" alt="Alps Capital Logo" />
     <h1>Alps Capital</h1>
     <p>We Build Premium iOS Apps for the Modern World</p>
   </header>
@@ -94,7 +118,11 @@ html_with_form = """
 
   <section>
     <h2>Contact Us</h2>
-    <form name="contact" method="POST" data-netlify="true">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact" />
+      <p style="display:none;">
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+      </p>
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
@@ -109,10 +137,10 @@ html_with_form = """
 </html>
 """
 
-# Save the HTML content with contact form to a file
-form_dir = Path("/mnt/data/alpscapital_site_with_form")
-form_dir.mkdir(parents=True, exist_ok=True)
-html_file_with_form = form_dir / "index.html"
-html_file_with_form.write_text(html_with_form)
+# Save updated version
+final_dir = Path("/mnt/data/alpscapital_final_site")
+final_dir.mkdir(parents=True, exist_ok=True)
+final_html = final_dir / "index.html"
+final_html.write_text(html_final)
 
-html_file_with_form.name
+final_html.name
