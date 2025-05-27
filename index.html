@@ -51,50 +51,6 @@
       font-size: 1.2rem;
       color: #aaa;
     }
-    section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    h2 {
-      margin-bottom: 1rem;
-    }
-    .services, .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .portfolio div {
-      background: #1a1a1a;
-      border-radius: 8px;
-      padding: 1.5rem;
-      text-align: center;
-      border: 1px solid #333;
-    }
-    .portfolio h3 {
-      color: #00c6ff;
-      margin-bottom: 0.5rem;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-    form input, form textarea {
-      margin-bottom: 1rem;
-      padding: 0.75rem;
-      border: none;
-      border-radius: 5px;
-      background: #222;
-      color: #fff;
-    }
-    form button {
-      background: #00c6ff;
-      border: none;
-      padding: 0.75rem;
-      font-size: 1rem;
-      cursor: pointer;
-      color: #000;
-    }
     footer {
       background: #1a1a1a;
       text-align: center;
@@ -108,61 +64,18 @@
   <nav>
     <div class="logo">Alps Capital</div>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <header id="home">
+  <header>
     <h1>We Build Premium iOS Apps</h1>
     <p>Modern. Scalable. Native.</p>
   </header>
-
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Alps Capital is a tech-forward iOS app studio delivering smart, visually polished, and scalable solutions for startups and enterprises alike.</p>
-  </section>
-
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div><h3>App Design</h3><p>UI/UX optimized for Apple platforms</p></div>
-      <div><h3>iOS Development</h3><p>Native Swift & SwiftUI apps</p></div>
-      <div><h3>Launch & ASO</h3><p>Get to the App Store faster & smarter</p></div>
-      <div><h3>Maintenance</h3><p>Version upgrades, bug fixes, enhancements</p></div>
-    </div>
-  </section>
-
-  <section id="portfolio">
-    <h2>Coming Soon</h2>
-    <div class="portfolio">
-      <div>
-        <h3>AI Productivity App</h3>
-        <p>A sleek, voice-driven productivity assistant powered by the latest AI.</p>
-      </div>
-      <div>
-        <h3>Companion App</h3>
-        <p>An interactive learning app that adapts to each user’s progress.</p>
-      </div>
-      <div>
-        <h3>Next-Gen Finance</h3>
-        <p>Financial AI for better daily budgeting and smart savings suggestions.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form name="contact" method="POST" data-netlify="true">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
 
   <footer>
     &copy; 2025 Alps Capital. All rights reserved.
