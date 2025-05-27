@@ -138,6 +138,30 @@ nav ul li a:hover {
   color: #ccc;
 }
 
+/* Service Boxes */
+.service-box {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+  margin-bottom: 2rem;
+  text-align: left;
+  width: 100%;
+  max-width: 700px;
+}
+
+.hero-content .service-box h2 {
+  color: #00c6ff;
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.hero-content .service-box p {
+  color: #ccc;
+  margin: 0.5rem 0 0;
+}
+
+
 /* Footer */
 footer {
   background: #1a1a1a;
